@@ -1,0 +1,12 @@
+version: '3.4'
+services:
+
+  node-srv:
+    build: nodejs
+    
+  dart-srv:
+    build: dart
+    depends_on:
+      - node-srv
+    links:
+      - "node-srv:node-srv"
